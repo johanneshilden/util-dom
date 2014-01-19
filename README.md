@@ -10,22 +10,22 @@ This module provides a trivial `Element` data type and some basic FFI wrappers f
 
 ## Functions
 
-* createElement
-* appendChild
-* setAttribute
-* onLoad
-* documentBody
-* addWindowEvent
-* toString
-* innerHtml
-* outerHtml
-* getElementById
-* getElementsByClassName
-* getElementsByTagName
-* setElementHtml
-* addEventListener
-* addElementEventListener
-* onClick
+* [createElement](#createElement)
+* [appendChild](#appendChild)
+* [setAttribute](#setAttribute)
+* [onLoad](#onLoad)
+* [documentBody](#documentBody)
+* [addWindowEvent](#addWindowEvent)
+* [toString](#toString)
+* [innerHtml](#innerHtml)
+* [outerHtml](#outerHtml)
+* [getElementById](#getElementById)
+* [getElementsByClassName](#getElementsByClassName)
+* [getElementsByTagName](#getElementsByTagName)
+* [setElementHtml](#setElementHtml)
+* [addEventListener](#addEventListener)
+* [addElementEventListener](#addElementEventListener)
+* [onClick](#onClick)
 
 ### createElement
 
