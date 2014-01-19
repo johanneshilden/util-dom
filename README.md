@@ -10,22 +10,22 @@ This module provides a trivial `Element` data type and some basic FFI wrappers f
 
 ## Functions
 
-* [createElement](#createElement)
-* [appendChild](#appendChild)
-* [setAttribute](#setAttribute)
-* [onLoad](#onLoad)
-* [documentBody](#documentBody)
-* [addWindowEvent](#addWindowEvent)
-* [toString](#toString)
-* [innerHtml](#innerHtml)
-* [outerHtml](#outerHtml)
-* [getElementById](#getElementById)
-* [getElementsByClassName](#getElementsByClassName)
-* [getElementsByTagName](#getElementsByTagName)
-* [setElementHtml](#setElementHtml)
-* [addEventListener](#addEventListener)
-* [addElementEventListener](#addElementEventListener)
-* [onClick](#onClick)
+* [createElement](#createelement)
+* [appendChild](#appendchild)
+* [setAttribute](#setattribute)
+* [onLoad](#onload)
+* [documentBody](#documentbody)
+* [addWindowEvent](#addwindowevent)
+* [toString](#tostring)
+* [innerHtml](#innerhtml)
+* [outerHtml](#outerhtml)
+* [getElementById](#getelementbyid)
+* [getElementsByClassName](#getelementsbyclassname)
+* [getElementsByTagName](#getelementsbytagname)
+* [setElementHtml](#setelementhtml)
+* [addEventListener](#addeventlistener)
+* [addElementEventListener](#addelementeventlistener)
+* [onClick](#onclick)
 
 ### createElement
 
