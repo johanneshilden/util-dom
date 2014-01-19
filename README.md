@@ -8,6 +8,25 @@ This module provides a trivial `Element` data type and some basic FFI wrappers f
     -- | Represents a DOM element.
     data Element
 
+## Functions
+
+* createElement
+* appendChild
+* setAttribute
+* onLoad
+* documentBody
+* addWindowEvent
+* toString
+* innerHtml
+* outerHtml
+* getElementById
+* getElementsByClassName
+* getElementsByTagName
+* setElementHtml
+* addEventListener
+* addElementEventListener
+* onClick
+
 ### createElement
 
     createElement :: String -> Fay Element
