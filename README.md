@@ -116,7 +116,7 @@ This function returns a `Maybe Element` in the `Fay` monad, since a parent eleme
 
 ### getElementById
 
-Similar to the JavaScript method with the same name.
+Return the element with the id attribute matching the specified value, if one exists.
 
     getElementById :: String -> Fay (Maybe Element)
 

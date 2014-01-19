@@ -69,7 +69,9 @@ innerHtml = ffi "%1.innerHTML"
 outerHtml :: Element -> Fay String
 outerHtml = ffi "%1.outerHTML"
 
--- | Return the parent node of an element.
+-- | Return the parent node of an element.  This function returns a 
+-- Maybe Element in the Fay monad, since a parent element doesn't 
+-- always exist.
 parentNode :: Element -> Fay (Maybe Element)
 parentNode el = do 
     par <- parent el
@@ -80,7 +82,9 @@ parentNode el = do
 parent :: Element -> Fay Element
 parent = ffi "%1.parentNode"
 
--- | Similar to the JavaScript method with the same name.
+-- | Return the element with the id attribute matching the specified value, if 
+-- one exists. This function returns a Maybe Element to properly handle cases 
+-- where no element is found.
 getElementById :: String -> Fay (Maybe Element)
 getElementById element = do
     el <- getById element
