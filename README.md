@@ -112,13 +112,15 @@ Return the parent node of an element.
 
     parentNode :: Element -> Fay (Maybe Element)
 
+This function returns a `Maybe Element` in the `Fay` monad, since a parent element doesn't always exist.
+
 ### getElementById
 
 Similar to the JavaScript method with the same name.
 
     getElementById :: String -> Fay (Maybe Element)
 
-This function returns a `Maybe Element` in the `Fay` monad to properly handle cases where no element is found matching the provided id.
+This function returns a `Maybe Element` to properly handle cases where no element is found matching the provided id.
 
 **Example:**
 
