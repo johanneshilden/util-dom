@@ -8,6 +8,7 @@ module Util.DOM
     , toString
     , innerHtml
     , outerHtml
+    , parentNode
     , getElementById
     , getElementsByClassName
     , getElementsByTagName
@@ -68,12 +69,22 @@ innerHtml = ffi "%1.innerHTML"
 outerHtml :: Element -> Fay String
 outerHtml = ffi "%1.outerHTML"
 
+-- | Return the parent node of an element.
+parentNode :: Element -> Fay (Maybe Element)
+parentNode el = do 
+    par <- parent el
+    return $ if isEmptyObj par == False
+        then Just par
+        else Nothing
+
+parent :: Element -> Fay Element
+parent = ffi "%1.parentNode"
+
 -- | Similar to the JavaScript method with the same name.
 getElementById :: String -> Fay (Maybe Element)
 getElementById element = do
     el <- getById element
-    empty <- isEmptyObj el
-    return $ if empty == False
+    return $ if isEmptyObj el == False
         then Just el
         else Nothing
 
@@ -106,7 +117,7 @@ setElementHtml element html = do
         Nothing -> return ()      -- No such element!
         Just e  -> setHtml e html
 
-isEmptyObj :: Element -> Fay Bool
+isEmptyObj :: Element -> Bool
 isEmptyObj = ffi "function(obj){for(var n in obj){return false;}return true;}(%1)"
 
 -- | Register an event listener on an element.

@@ -1,6 +1,8 @@
 util-dom
 ========
 
+**Note:** This library is pretty much redundant. Instead, see: [https://github.com/faylang/fay-dom](https://github.com/faylang/fay-dom)
+
 Basic DOM manipulation API for Fay (faylang: [https://github.com/faylang/fay/wiki](https://github.com/faylang/fay/wiki)). 
 
 This module provides a trivial `Element` data type and some basic FFI wrappers for a few of the standard JavaScript DOM functions (feel free to add more). It does not depend on jQuery or other third-party JavaScript libraries.
