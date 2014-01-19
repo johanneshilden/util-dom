@@ -1,9 +1,16 @@
 module Util.DOM
     ( Element
+    , createElement
+    , appendChild
+    , setAttribute
+    , onLoad
+    , documentBody
     , toString
     , innerHtml
+    , outerHtml
     , getElementById
     , getElementsByClassName
+    , getElementsByTagName
     , setBodyHtml
     , setHtml
     , setElementHtml
@@ -18,6 +25,37 @@ import FFI
 -- | Represents a DOM element.
 data Element
 
+-- | Create an element with the specified name.
+createElement :: String -> Fay Element
+createElement = ffi "document.createElement(%1)"
+
+-- | Add an element after the last child node of the specified element.
+appendChild :: Element    -- ^ Parent node
+            -> Element    -- ^ The child element
+            -> Fay ()
+appendChild = ffi "%1.appendChild(%2)"
+
+-- | Add the attribute/value pair to the provided target element. 
+setAttribute :: Element    -- ^ An element
+             -> String     -- ^ Attribute name
+             -> String     -- ^ Attribute value
+             -> Fay ()
+setAttribute = ffi "%1.setAttribute(%2, %3)"
+
+-- | Add an "on load" event listener to the window object.
+onLoad :: Fay () -> Fay ()
+onLoad = addWindowEvent "load"
+
+-- | Retrieve the document body element.
+documentBody :: Fay Element
+documentBody = ffi "document.body"
+
+-- | Add an event listener to the window object.
+addWindowEvent :: String   -- ^ An event type
+               -> Fay ()   -- ^ The listener function 
+               -> Fay ()
+addWindowEvent = ffi "window.addEventListener(%1, %2)"
+
 -- | Stringify an element.
 toString :: Element -> Fay String
 toString = ffi "%1.toString()"
@@ -25,6 +63,10 @@ toString = ffi "%1.toString()"
 -- | Retrieve the HTML between the start and end tags of the object.
 innerHtml :: Element -> Fay String
 innerHtml = ffi "%1.innerHTML"
+
+-- | Return the object and its content.
+outerHtml :: Element -> Fay String
+outerHtml = ffi "%1.outerHTML"
 
 -- | Similar to the JavaScript method with the same name.
 getElementById :: String -> Fay (Maybe Element)
@@ -42,9 +84,13 @@ getById = ffi "document.getElementById(%1)"
 getElementsByClassName :: String -> Fay [Element]
 getElementsByClassName = ffi "document.getElementsByClassName(%1)"
 
+-- | Return a list of elements with the specified tag name.
+getElementsByTagName :: String -> Fay [Element]
+getElementsByTagName = ffi "document.getElementsByTagName(%1)"
+
 -- | Set the inner HTML of the document's body element.
 setBodyHtml :: String -> Fay ()
-setBodyHtml = ffi "document.body.innerHTML = %1"
+setBodyHtml html = documentBody >>= flip setHtml html 
 
 -- | Set the inner HTML of an element. 
 setHtml :: Element -> String -> Fay ()
