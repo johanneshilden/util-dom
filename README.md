@@ -21,6 +21,7 @@ This module provides a trivial `Element` data type and some basic FFI wrappers f
 * [toString](#tostring)
 * [innerHtml](#innerhtml)
 * [outerHtml](#outerhtml)
+* [parentNode](#parentnode)
 * [getElementById](#getelementbyid)
 * [getElementsByClassName](#getelementsbyclassname)
 * [getElementsByTagName](#getelementsbytagname)
@@ -104,6 +105,12 @@ Retrieve the HTML between the start and end tags of the object.
 Return the object and its content.
 
     outerHtml :: Element -> Fay String
+
+### parentNode
+
+Return the parent node of an element.
+
+    parentNode :: Element -> Fay (Maybe Element)
 
 ### getElementById
 
