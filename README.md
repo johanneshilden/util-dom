@@ -72,8 +72,6 @@ Stringify an element.
 
     toString :: Element -> Fay String
 
-(Simply calls `toString()` in JS.)
-
 ### innerHtml
 
 Retrieve the HTML between the start and end tags of the object.
@@ -92,7 +90,7 @@ Similar to the JavaScript method with the same name.
 
     getElementById :: String -> Fay (Maybe Element)
 
-This function returns a `Maybe Element` in the `Fay` monad, to properly handle cases where no element is found matching the provided id.
+This function returns a `Maybe Element` in the `Fay` monad to properly handle cases where no element is found matching the provided id.
 
 **Example:**
 
