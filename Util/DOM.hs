@@ -69,7 +69,7 @@ innerHtml = ffi "%1.innerHTML"
 outerHtml :: Element -> Fay String
 outerHtml = ffi "%1.outerHTML"
 
--- | Return the parent node of an element.  This function returns a 
+-- | Return the parent node of an element. This function returns a 
 -- Maybe Element in the Fay monad, since a parent element doesn't 
 -- always exist.
 parentNode :: Element -> Fay (Maybe Element)
