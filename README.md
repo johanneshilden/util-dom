@@ -123,13 +123,19 @@ Set the inner HTML of the document's body element.
 
 ### addEventListener
 
-Set the inner HTML of an element. 
+Register an event listener on an element.
 
     setHtml :: Element -> String -> Fay ()
 
+**Example:**
+
+    createButton = do
+        btn <- createButton "Hello"
+        addEventListener btn "click" doStuff
+
 ### addElementEventListener
 
-Register an event listener on an element.
+Register an event listener on the element with the specified id. Does nothing if no element exists with the provided id.
 
     addEventListener :: Element -> String -> Fay Bool -> Fay ()
 
