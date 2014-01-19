@@ -35,7 +35,7 @@ appendChild :: Element    -- ^ Parent node
             -> Fay ()
 appendChild = ffi "%1.appendChild(%2)"
 
--- | Add the attribute/value pair to the provided target element. 
+-- | Add or set the attribute/value pair on the provided target element. 
 setAttribute :: Element    -- ^ An element
              -> String     -- ^ Attribute name
              -> String     -- ^ Attribute value

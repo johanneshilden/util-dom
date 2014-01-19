@@ -65,9 +65,8 @@ example3 = do
         run a = sequence_ . map a 
 
 main :: Fay ()
-main = do
-    onLoad $ do
-        example1
-        example2
-        example3
+main = onLoad $ do
+    example1
+    example2
+    example3
 
